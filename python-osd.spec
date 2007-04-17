@@ -1,6 +1,6 @@
 %define truename	pyosd
 %define name		python-osd
-%define version 0.2.12
+%define version 0.2.14
 %define release %mkrel 1
 
 Name:		%{name}
@@ -29,18 +29,13 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT  
-python setup.py install --root=$RPM_BUILD_ROOT
+python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
 %clean
 rm -rf $RPM_BUILD_ROOT  
 
-%files
+%files -f INSTALLED_FILES
+
 %defattr(-,root,root)
 %doc AUTHORS README*  ChangeLog COPYING
-%py_libdir/site-packages/_pyosd.so
-%dir %py_libdir/site-packages/pyosd/
-%py_libdir/site-packages/pyosd/__init__.py
-%py_libdir/site-packages/pyosd/__init__.pyc
-%py_libdir/site-packages/pyosd/daemon.py
-%py_libdir/site-packages/pyosd/daemon.pyc
 
