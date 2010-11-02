@@ -1,7 +1,7 @@
 %define truename	pyosd
 %define name		python-osd
 %define version 0.2.14
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name:		%{name}
 Version:	%{version}
@@ -29,13 +29,16 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT  
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python setup.py install --root=$RPM_BUILD_ROOT 
 
 %clean
 rm -rf $RPM_BUILD_ROOT  
 
-%files -f INSTALLED_FILES
-
+%files 
+%dir %py_platsitedir/pyosd
+%py_platsitedir/pyosd/*
+%py_platsitedir/_pyosd.so
+%py_platsitedir/pyosd-%{version}-*.egg-info
 %defattr(-,root,root)
 %doc AUTHORS README*  ChangeLog COPYING
 
