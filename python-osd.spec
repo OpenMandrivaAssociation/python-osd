@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Summary:	Python wrapper for libosd
 Group:		Development/Python
-License:	GPL
+License:	GPLv2
 URL:		http://repose.cx/pyosd
 Source:		%{truename}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(python)
@@ -16,7 +16,7 @@ BuildRequires:	libxosd-devel
 BuildRequires:	pythonegg(setuptools)
 
 Provides:	%{truename}
-Obsoletes:	%{truename}
+Obsoletes:	%{truename} < %{version}-%{release}
 
 %description 
 PyOSD is a python module for displaying text on your X display, much like the 
@@ -30,6 +30,8 @@ python setup.py build
 
 %install  
 python setup.py install --root=$RPM_BUILD_ROOT   
+chmod +x $RPM_BUILD_ROOT%{py_platsitedir}pyosd/{__init__,daemon}.py
+
 
 %files 
 %dir %{py_platsitedir}/pyosd
