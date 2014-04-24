@@ -32,10 +32,10 @@ python setup.py build
 python setup.py install --root=$RPM_BUILD_ROOT   
 
 %files 
-%dir %py_platsitedir/pyosd
-%py_platsitedir/pyosd/*
-%py_platsitedir/_pyosd.so
-%py_platsitedir/pyosd-%{version}-*.egg-info
+%dir %{py_platsitedir}/pyosd
+%{py_platsitedir}/pyosd/*
+%{py_platsitedir}/_pyosd.so
+%{py_platsitedir}/pyosd-%{version}-*.egg-info
 %defattr(-,root,root)
 %doc AUTHORS README*  ChangeLog COPYING
 
