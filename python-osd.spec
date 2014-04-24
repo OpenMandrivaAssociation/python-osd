@@ -30,7 +30,7 @@ python setup.py build
 
 %install  
 python setup.py install --root=$RPM_BUILD_ROOT   
-chmod +x $RPM_BUILD_ROOT%{py_platsitedir}pyosd/{__init__,daemon}.py
+chmod +x $RPM_BUILD_ROOT%{py_platsitedir}/pyosd/{__init__,daemon}.py
 
 
 %files 
