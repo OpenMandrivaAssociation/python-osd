@@ -13,6 +13,8 @@ URL:		http://repose.cx/pyosd
 Source:		%{truename}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(python)
 BuildRequires:	libxosd-devel
+BuildRequires:	pythonegg(setuptools)
+
 Provides:	%{truename}
 Obsoletes:	%{truename}
 
