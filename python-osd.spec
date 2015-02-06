@@ -1,7 +1,7 @@
 %define truename	pyosd
 %define name		python-osd
 %define version 0.2.14
-%define release %mkrel 5
+%define release 6
 
 Name:		%{name}
 Version:	%{version}
