@@ -9,7 +9,7 @@ Release:	%{release}
 Summary:	Python wrapper for libosd
 Group:		Development/Python
 License:	GPL
-URL:		http://repose.cx/pyosd
+URL:		https://repose.cx/pyosd
 Source:		%{truename}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel
